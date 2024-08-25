@@ -1,0 +1,477 @@
+/* styling page border */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* header styling */
+nav{
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(42, 42, 44);
+    height: 6em;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 2.5em;
+    padding: 0 3em;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 5em;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+}
+a.active,a:hover{
+    background: blueviolet;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (width < 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (width < 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(42, 42, 44);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: blueviolet;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* home page styling */
+.home{
+    width: 100%;
+    background-color: rgb(42, 42, 44);
+    color: white;
+    background-image: url(2.png);
+    background-position: right;
+    display: flex;
+    align-items: center;
+    padding: 7% 17% 7% 17%;
+    background-attachment: fixed;
+}
+/* media queries for home elements */
+@media screen and (max-width: 600px){
+    .home {display: flex; flex-direction: column; row-gap: 3em; padding-top: 10em;}
+}
+/* styling for text in home page */
+.slide-right {
+    overflow: hidden;
+    max-width: 30em;
+}
+/* animation for text in home page */
+.slide-right h1 {
+    animation: 2s slide-right forwards;
+    transform:translateX(-100%);
+}
+/* animation from one point to another point */
+@keyframes slide-right {
+to {
+    transform:translateX(0);
+}
+}
+/* animation of watch image */
+div.slide-left {
+    overflow:hidden;
+}
+/* slide effect for watch image */
+div.slide-left img {
+    animation: slide-left 2s;
+}
+/* animation slide property  */
+@keyframes slide-left {
+from {
+    margin-left: 100%;
+}
+to {
+    margin-left: 0%;
+}
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .home {padding-top: 10em;}
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* gallery container styling */
+.gallery{
+    text-align: center;
+    background-color: rgba(244, 233, 244, 0.496);
+    background-image: url(ring.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+}
+/* padding for carousel */
+#carouselExampleAutoplaying{
+    padding-bottom: 10%;
+}
+/* scale-up transform for gallery watches */
+.carousel-item img:hover {
+    transition: all 1s ease;
+    transform: scale(1.1);
+    opacity:0.5;
+    color: rgba(139, 38, 233, 0.178);
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* features section padding */
+.features{
+    padding-top: 15%;
+}
+/* content 1 from features section styling */
+.f1{
+    display: flex;
+    justify-content: space-evenly;
+    /* column-gap: 10%; */
+}
+/* padding for featured image */
+.fi1 img{
+    width: 25em;
+}
+.voice, .connect {
+    padding-bottom: 2em;
+}
+/* hover transition effect */
+.voice:hover, .connect:hover, .task:hover, .foot ol li:hover{
+    transition: all .5s ease;
+    transform: translateX(1em);
+}
+.f2{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10%;
+    padding-bottom: 13%;
+}
+.fi2 img{
+    width: 22em;
+}
+/* padding for featured content */
+.f2a1, .f2a2{
+    padding-bottom: 12%;
+}
+/* styling for featured heading6 */
+.f2a1 h6{
+    font-weight: 700; 
+    color: rgb(159, 156, 156);
+}
+/* styling for featured heading1 */
+.f2a1 h1{
+    font-weight: 900; 
+    font-size: 3em; 
+    padding-bottom: 1em;
+}
+/* media queries of features below 541px */
+@media screen and (width < 541px) {
+    .f1, .f2 {display: flex; flex-direction: column;}
+    .fi1 img, .fi2 img {width: 20em; padding-left: 2em;}
+    .fi1 img {padding-bottom: 2em;}
+    .fi2 img {padding-top: 2em;}
+    .f1a {padding-left: 3em;}
+    .f2a {padding: 0 2em;}
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* shop section styling */
+.shop{
+    background-color: rgb(42, 42, 44);
+    color: white;
+    padding-bottom: 7em;
+}
+/* shop section heading6 styling */
+.shop h6{
+    font-weight: 700; 
+    color: rgb(159, 156, 156); 
+    text-align: center; 
+    padding-top: 8em; 
+    padding-bottom: 1em;
+}
+/* shop section heading1 styling */
+.shop h1{
+    font-weight: 900; 
+    font-size: 3em; 
+    padding-bottom: 2em; 
+    text-align: center;
+}
+/* displaying watch in shop styling */
+.watchshop{
+    display: flex;
+    width: 100%;
+}
+/* watches styling */
+.mint, .purple, .golden{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    text-align: center; 
+    padding-bottom: 5em;
+}
+/* watches images styling */
+.mint img, .purple img, .golden img{
+    display: block;
+    width: 50%;
+}
+/* watches content styling */
+.mintgreen, .purpleburry, .goldensunset{
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.6s;
+    overflow: hidden;
+}
+/* watches content styling when hovered */
+.mintgreen:hover, .purpleburry:hover, .goldensunset:hover{
+    opacity: 1;
+    padding-top: 5em;
+}
+.mintgreen h2, .purpleburry h2, .goldensunset h2{
+    color: rgb(50, 180, 130);
+    font-weight: 1000;
+    font-size: 1.8em;
+}
+.purpleburry h2{
+    color: rgb(104, 50, 180);
+}
+.goldensunset h2{
+    color: rgb(209, 176, 42);
+}
+/* button alignment */
+.button1{
+    text-align: center;
+}
+/* button styling */
+.button1 button{
+    font-weight: 900; 
+    border-radius: 2em; 
+    padding: 1em 2.5em 1em 2.5em; 
+    border-color: white; 
+    color: white; 
+    background-color: rgb(42, 42, 44);
+}
+/* button hover effect styling */
+.button1 button:hover{
+    transition: all .5s ease;
+    transform: scale(1.1);
+    background-color: rgb(200, 199, 199);
+    color: black;
+    border: 2px solid white;
+    font-weight: 900;
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* review section heading */
+#review h1{
+    padding-bottom: 2em; 
+    padding-top: 3em; 
+    text-align: center;
+    font-weight: 1000;
+}
+/* review container */
+.container {
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    padding-bottom: 3em;
+}
+/* applying dimensions for review images */
+.icon img{
+    width: 19.5em;
+    height: 27em;
+    border-radius: 0.2em;
+}
+/* card width */
+.card{
+    width: 19.3em;
+}
+/* review images adjusting */
+.icon img {
+    position: absolute;
+    top: 7.2em;
+    left: 9.5em;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: #fff;
+}
+/* adjusting width & height of the content to back side of review image */
+.container .card .slide {
+    width: 19.3em;
+    height: 13.5em;
+    transition: 0.5s;
+}
+/* hiding the content to backside of image */
+.container .card .slide.slide1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: .7s;
+    transform: translateY(100px);
+}
+/* translating the hiding content to visible state */
+.container .card:hover .slide.slide1{
+    transform: translateY(-100px);
+}
+/* making the content proper visible to the user when hovered */
+.container .card .slide.slide2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 1s;
+    transform: translateY(-100px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+/* positioning the content card to the proper visibility when hovered */
+.container .card:hover .slide.slide2{
+    transform: translateY(0);
+}
+/* a small blue line at the bottom of the content card to visible little more attractive */
+.slide.slide2::after{
+    content: "";
+    position: absolute;
+    width: 2em;
+    height: 4px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2c73df;
+}
+/* paragraph content on the content card styling */
+.content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+/* heading on the content card styling */
+.content h3 {
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+}
+/* media queries for review section of max-width: 768px */
+@media screen and (max-width: 768px) {
+    .container {display: flex; flex-direction: column;} 
+    #ri2 {padding-top: 10em;}  
+}
+/* align image to center */
+@media screen and (width < 541px) {
+    .container {padding-left: 1.7em;}
+}
+/* aligning of socialmedia icons */
+#conn{
+    height: 4em;
+    background-color: rgb(125, 30, 255);
+    text-align: center;
+} 
+#conn {
+    padding-top: 1.3em;
+    font-size: 3em;
+}
+#conn .ion:hover{
+    transition: all .5s ease;
+    transform: scale(1.2);
+}
+/* --------------------------------------------------------------
+-------------------------------------------------------------- */
+/* footer */
+.footer{
+    background-color: rgb(42, 42, 44);
+    color: white;
+    display: flex;
+    column-gap: 5em;
+    justify-content: space-evenly;
+    padding: 5em;
+}
+/* paragraph styling in footer1 */
+.footer1 p{
+    padding-bottom: 0.7em;
+    color: rgb(159, 156, 156);
+}
+/* svg styling in footer */
+svg{
+    width: 1em;
+    padding-left: 0.5em;
+}
+/* list style removal and adding color to the list in footer */
+.foot ol li{
+    list-style-type: none;
+    color: rgb(159, 156, 156);
+}
+/* copyrights styling */
+.copyright{
+    background-color: rgb(42, 42, 44);
+    color: rgb(159, 156, 156);
+    text-align: center;
+    padding-bottom: 3em;
+}
+/* media queries for footer section width below 541px */
+@media screen and (width < 541px) {
+    .footer {display: block;}
+    .foot {padding-top: 3em;}
+}
