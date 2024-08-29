@@ -514,7 +514,7 @@ to {
 /* align image to center */
 @media screen and (width < 541px) {
     .container {padding-left: 1.7em;}
-    
+    #ri1, #ri2 {padding-top: 3.2em;}
 }
 @media screen and (width < 1024px){
     #review h1 {padding-bottom: 6em;} 
