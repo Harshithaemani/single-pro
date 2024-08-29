@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
 }
 /* --------------------------------------------------------------
 -------------------------------------------------------------- */
@@ -77,7 +78,7 @@ a.active,a:hover{
         top: 80px;
         left: -100%;
         text-align: center;
-        transition: all 1s;
+        transition: all .5s;
     }
     nav ul li{
         display: block;
@@ -87,7 +88,7 @@ a.active,a:hover{
     nav ul li a{
         font-size: 20px;
     }
-    a:hover,a.active{
+    a:focus,a.active{
         background: none;
         color: blueviolet;
     }
@@ -258,136 +259,54 @@ to {
     padding-bottom: 2em; 
     text-align: center;
 }
-/* displaying watch in shop styling */
-.watchshop{
-    display: flex;
-    width: 100%;
+.watchstyle {
+    min-height: 30vh;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    padding-bottom: 4em;
 }
-/* mint green watch styling */
-.mint{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    text-align: center; 
-    padding-bottom: 5em;
+.figwatch {
+    padding-right: 3em;
 }
-/* mint green watch image styling */
-.mint img{
-    display: block;
-    width: 50%;
+figure img{
+    width: 15em;
 }
-/* mint green watch content styling */
-.mintgreen{
-    width: 50%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: 0.6s;
-    overflow: hidden;
+figure {
+    display: grid;
+    border-radius: 1em;
+    cursor: pointer;
 }
-/* mint green watch content styling when hovered */
-.mintgreen:hover{
-    opacity: 1;
-    padding-top: 5em;
+figure > * {
+    grid-area: 1/1;
+    transition: .4s;
 }
-.mintgreen h5, .purpleburry h5{
+figure .figcaption1, figure .figcaption2, figure .figcaption3{
+    display: grid;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1.3em;
+    font-weight: 1000;
+    color: rgb(14, 179, 129);
+    padding: .75em ;
+    background: var(--c,#0009);
+    clip-path: inset(0 var(--_i,100%) 0 0);
+}
+figure .figcaption2{
+    color: rgb(148, 30, 202);
+}
+figure .figcaption3{
+    color: rgb(226, 180, 12);
     font-size: 1.2em;
 }
-.mintgreen h2{
-    color: rgb(50, 180, 130);
-    font-weight: 1000;
-    font-size: 1.8em;
+figure:hover .figcaption1, figure:hover .figcaption2, figure:hover .figcaption3{
+    --_i: 0%;
 }
-.mintgreen h3, .purpleburry h5{
-    font-size: 1.5em;
+figure:hover img {
+    transform: scale(1.1);
 }
-/* mint green watch content transition when hovered */
-.mintgreen:hover > *{
-    transition: transform 0.6s;
-    transform: translateY(0);
-}
-/* purple burry watch styling */
-.purple{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    text-align: center; 
-    padding-bottom: 5em;
-}
-/* purple burry watch image styling */
-.purple img{
-    display: block;
-    width: 50%;
-}
-/* purple burry watch content styling */
-.purpleburry{
-    width: 50%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: 0.6s;
-    overflow: hidden;
-}
-/* purple burry watch content styling when hovered */
-.purpleburry:hover{
-    opacity: 1;
-    padding-top: 5em;
-}
-.purpleburry h2{
-    color: rgb(104, 50, 180);
-    font-weight: 1000;
-    font-size: 1.8em;
-}
-/* purple burry watch content transition when hovered */
-.purpleburry:hover > *{
-    transition: transform 0.6s;
-    transform: translateY(0em);
-}
-/* goldensunset watch styling */
-.golden{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    text-align: center; 
-    padding-bottom: 5em;
-}
-/* goldensunset watch image styling */
-.golden img{
-    display: block;
-    width: 50%;
-}
-/* goldensunset watch content styling */
-.goldensunset{
-    width: 50%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: 0.6s;
-    overflow: hidden;
-}
-/* goldensunset watch content styling when hovered */
-.goldensunset:hover{
-    opacity: 1;
-    padding-top: 5em;
-}
-.goldensunset h2{
-    color: rgb(209, 176, 42);
-    font-weight: 1000;
-    font-size: 1.8em;
-}
-/* goldensunset watch content transition when hovered */
-.goldensunset:hover > *{
-    transition: transform 0.6s;
-    transform: translateY(0em);
+@media screen and (width < 854px) {
+    .watchstyle {display: grid; grid-auto-flow: row;}
 }
 /* button alignment */
 .button1{
@@ -514,7 +433,8 @@ to {
 /* align image to center */
 @media screen and (width < 541px) {
     .container {padding-left: 1.7em;}
-    #ri1, #ri2 {padding-top: 4em;}
+    #ri1, #ri2 {padding-top: 3.2em;}
+    #ri2 {padding-top: 9em;}
 }
 @media screen and (width < 1024px){
     #review h1 {padding-bottom: 6em;} 
